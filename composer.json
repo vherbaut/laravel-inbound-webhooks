@@ -1,0 +1,56 @@
+{
+    "name": "vherbaut/laravel-inbound-webhooks",
+    "description": "A Laravel package to handle inbound webhooks from any provider with signature validation, logging, and replay capabilities.",
+    "keywords": ["laravel", "webhooks", "stripe", "github", "inbound", "api"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vincent Herbaut",
+            "email": "vincenth.lzh@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "illuminate/database": "^10.0|^11.0|^12.0",
+        "illuminate/queue": "^10.0|^11.0|^12.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "larastan/larastan": "^2.0|^3.0",
+        "orchestra/testbench": "^8.0|^9.0",
+        "pestphp/pest": "^2.0|^3.0"
+    },
+    "scripts": {
+        "test": "pest",
+        "analyse": "phpstan analyse",
+        "format": "pint"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vherbaut\\InboundWebhooks\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vherbaut\\InboundWebhooks\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vherbaut\\InboundWebhooks\\InboundWebhooksServiceProvider"
+            ],
+            "aliases": {
+                "InboundWebhooks": "Vherbaut\\InboundWebhooks\\Facades\\InboundWebhooks"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
