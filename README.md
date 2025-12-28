@@ -1,5 +1,12 @@
 # Laravel Inbound Webhooks
 
+[![Tests](https://github.com/vherbaut/laravel-inbound-webhooks/actions/workflows/tests.yml/badge.svg)](https://github.com/vherbaut/laravel-inbound-webhooks/actions/workflows/tests.yml)
+[![PHPStan](https://img.shields.io/badge/PHPStan-level%205-brightgreen.svg)](https://phpstan.org/)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/vherbaut/laravel-inbound-webhooks.svg)](https://packagist.org/packages/vherbaut/laravel-inbound-webhooks)
+[![Total Downloads](https://img.shields.io/packagist/dt/vherbaut/laravel-inbound-webhooks.svg)](https://packagist.org/packages/vherbaut/laravel-inbound-webhooks)
+[![License](https://img.shields.io/packagist/l/vherbaut/laravel-inbound-webhooks.svg)](https://packagist.org/packages/vherbaut/laravel-inbound-webhooks)
+[![PHP Version](https://img.shields.io/packagist/php-v/vherbaut/laravel-inbound-webhooks.svg)](https://packagist.org/packages/vherbaut/laravel-inbound-webhooks)
+
 A Laravel package to handle inbound webhooks from any provider with signature validation, logging, queue processing, and replay capabilities.
 
 ## Features
