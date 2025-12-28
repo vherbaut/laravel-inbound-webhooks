@@ -49,7 +49,7 @@ class DriverManager
     ];
 
     /**
-     * @param Application $app The Laravel application instance
+     * @param  Application  $app  The Laravel application instance
      */
     public function __construct(Application $app)
     {
@@ -62,7 +62,7 @@ class DriverManager
      * Drivers are cached after first resolution, so subsequent calls
      * for the same provider return the same instance.
      *
-     * @param string $provider The provider name as configured in inbound-webhooks.providers
+     * @param  string  $provider  The provider name as configured in inbound-webhooks.providers
      *
      * @return DriverInterface The resolved driver instance
      *
@@ -86,8 +86,8 @@ class DriverManager
      * The callback receives the provider configuration array and must
      * return a DriverInterface instance.
      *
-     * @param string                                                  $name     The driver name to register
-     * @param callable(array<string, mixed>): DriverInterface $callback Factory callback
+     * @param  string  $name  The driver name to register
+     * @param  callable(array<string, mixed>): DriverInterface  $callback  Factory callback
      *
      * @return self Fluent interface
      */
@@ -101,7 +101,7 @@ class DriverManager
     /**
      * Retrieve configuration for a provider.
      *
-     * @param string $provider The provider name
+     * @param  string  $provider  The provider name
      *
      * @return array<string, mixed> The provider configuration
      *
@@ -127,8 +127,8 @@ class DriverManager
      * 2. Built-in drivers (stripe, github, slack, twilio, hmac)
      * 3. Fully qualified class names
      *
-     * @param string               $provider The provider name
-     * @param array<string, mixed> $config   The provider configuration
+     * @param  string  $provider  The provider name
+     * @param  array<string, mixed>  $config  The provider configuration
      *
      * @return DriverInterface The created driver instance
      *
@@ -162,7 +162,7 @@ class DriverManager
     /**
      * Check if a provider is configured.
      *
-     * @param string $provider The provider name to check
+     * @param  string  $provider  The provider name to check
      *
      * @return bool True if the provider has configuration, false otherwise
      */

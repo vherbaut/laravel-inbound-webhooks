@@ -15,6 +15,4 @@ use Exception;
  *
  * @see \Vherbaut\InboundWebhooks\Drivers\DriverInterface::validateSignature()
  */
-class InvalidSignatureException extends Exception
-{
-}
+class InvalidSignatureException extends Exception {}

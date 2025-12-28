@@ -41,7 +41,7 @@ class SlackDriver extends AbstractDriver
      * - The request timestamp
      * - The raw request body
      *
-     * @param Request $request The incoming webhook request
+     * @param  Request  $request  The incoming webhook request
      *
      * @throws InvalidSignatureException If headers are missing, secret is not configured,
      *                                   timestamp is outside tolerance, or signature is invalid
@@ -93,7 +93,7 @@ class SlackDriver extends AbstractDriver
      * - Interactive components: parses the JSON payload and returns the type
      * - Other requests: returns the top-level type
      *
-     * @param Request $request The incoming webhook request
+     * @param  Request  $request  The incoming webhook request
      *
      * @return string|null The event type, or null if not determinable
      */
@@ -126,7 +126,7 @@ class SlackDriver extends AbstractDriver
      * 1. The top-level event_id field
      * 2. The nested event.event_ts field
      *
-     * @param Request $request The incoming webhook request
+     * @param  Request  $request  The incoming webhook request
      *
      * @return string|null The external event ID, or null if not found
      */
@@ -141,7 +141,7 @@ class SlackDriver extends AbstractDriver
      * Handles both JSON payloads and form-encoded payloads from interactive
      * components (which send a JSON string in a 'payload' form field).
      *
-     * @param Request $request The incoming webhook request
+     * @param  Request  $request  The incoming webhook request
      *
      * @return array<string, mixed> The parsed payload data
      */

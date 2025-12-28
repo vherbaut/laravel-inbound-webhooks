@@ -30,7 +30,7 @@ class WebhookController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @param DriverManager $driverManager The driver manager for resolving provider drivers
+     * @param  DriverManager  $driverManager  The driver manager for resolving provider drivers
      */
     public function __construct(
         protected DriverManager $driverManager
@@ -47,8 +47,8 @@ class WebhookController extends Controller
      * 5. Dispatch async processing job
      * 6. Return 200 response immediately
      *
-     * @param Request $request  The incoming HTTP request
-     * @param string  $provider The provider name from the URL (e.g., "stripe", "github")
+     * @param  Request  $request  The incoming HTTP request
+     * @param  string  $provider  The provider name from the URL (e.g., "stripe", "github")
      *
      * @return JsonResponse|Response JSON response with status or error message
      */
@@ -98,9 +98,9 @@ class WebhookController extends Controller
      * Creates an InboundWebhook record with the parsed data from the driver.
      * The payload storage can be disabled via configuration to save space.
      *
-     * @param Request         $request  The incoming HTTP request
-     * @param string          $provider The webhook provider name
-     * @param DriverInterface $driver   The driver instance for this provider
+     * @param  Request  $request  The incoming HTTP request
+     * @param  string  $provider  The webhook provider name
+     * @param  DriverInterface  $driver  The driver instance for this provider
      *
      * @return InboundWebhook The created webhook model with pending status
      */

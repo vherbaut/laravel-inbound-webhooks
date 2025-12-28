@@ -46,7 +46,7 @@ class GitHubDriver extends AbstractDriver
      * GitHub sends a signature in the format "sha256=<hex>" computed from
      * the raw request body using HMAC-SHA256 with the webhook secret.
      *
-     * @param Request $request The incoming webhook request
+     * @param  Request  $request  The incoming webhook request
      *
      * @throws InvalidSignatureException If the header is missing, secret is not configured,
      *                                   format is invalid, or signature does not match
@@ -86,7 +86,7 @@ class GitHubDriver extends AbstractDriver
      * to create a more specific event type (e.g., "pull_request.opened",
      * "issues.closed").
      *
-     * @param Request $request The incoming webhook request
+     * @param  Request  $request  The incoming webhook request
      *
      * @return string|null The event type in format "event.action" or just "event"
      */
@@ -114,7 +114,7 @@ class GitHubDriver extends AbstractDriver
      * Returns the unique delivery GUID from the X-GitHub-Delivery header.
      * This ID is unique for each webhook delivery attempt.
      *
-     * @param Request $request The incoming webhook request
+     * @param  Request  $request  The incoming webhook request
      *
      * @return string|null The GitHub delivery GUID
      */

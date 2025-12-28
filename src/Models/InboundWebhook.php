@@ -171,7 +171,7 @@ class InboundWebhook extends Model
     /**
      * Mark the webhook as failed with an error message.
      *
-     * @param string $errorMessage The error message describing the failure
+     * @param  string  $errorMessage  The error message describing the failure
      * @return $this
      */
     public function markAsFailed(string $errorMessage): self
@@ -208,8 +208,8 @@ class InboundWebhook extends Model
     /**
      * Scope a query to only include webhooks from a specific provider.
      *
-     * @param Builder<InboundWebhook> $query
-     * @param string $provider The provider name (e.g., 'stripe', 'github')
+     * @param  Builder<InboundWebhook>  $query
+     * @param  string  $provider  The provider name (e.g., 'stripe', 'github')
      * @return Builder<InboundWebhook>
      */
     public function scopeProvider(Builder $query, string $provider): Builder
@@ -220,8 +220,8 @@ class InboundWebhook extends Model
     /**
      * Scope a query to only include webhooks of a specific event type.
      *
-     * @param Builder<InboundWebhook> $query
-     * @param string $eventType The event type (e.g., 'payment_intent.succeeded')
+     * @param  Builder<InboundWebhook>  $query
+     * @param  string  $eventType  The event type (e.g., 'payment_intent.succeeded')
      * @return Builder<InboundWebhook>
      */
     public function scopeEventType(Builder $query, string $eventType): Builder
@@ -232,8 +232,8 @@ class InboundWebhook extends Model
     /**
      * Scope a query to only include webhooks with a specific status.
      *
-     * @param Builder<InboundWebhook> $query
-     * @param WebhookStatus $status The webhook status
+     * @param  Builder<InboundWebhook>  $query
+     * @param  WebhookStatus  $status  The webhook status
      * @return Builder<InboundWebhook>
      */
     public function scopeStatus(Builder $query, WebhookStatus $status): Builder
@@ -244,7 +244,7 @@ class InboundWebhook extends Model
     /**
      * Scope a query to only include pending webhooks.
      *
-     * @param Builder<InboundWebhook> $query
+     * @param  Builder<InboundWebhook>  $query
      * @return Builder<InboundWebhook>
      */
     public function scopePending(Builder $query): Builder
@@ -255,7 +255,7 @@ class InboundWebhook extends Model
     /**
      * Scope a query to only include failed webhooks.
      *
-     * @param Builder<InboundWebhook> $query
+     * @param  Builder<InboundWebhook>  $query
      * @return Builder<InboundWebhook>
      */
     public function scopeFailed(Builder $query): Builder
@@ -266,7 +266,7 @@ class InboundWebhook extends Model
     /**
      * Scope a query to only include processed webhooks.
      *
-     * @param Builder<InboundWebhook> $query
+     * @param  Builder<InboundWebhook>  $query
      * @return Builder<InboundWebhook>
      */
     public function scopeProcessed(Builder $query): Builder
@@ -277,8 +277,8 @@ class InboundWebhook extends Model
     /**
      * Scope a query to only include webhooks older than the specified days.
      *
-     * @param Builder<InboundWebhook> $query
-     * @param int $days Number of days
+     * @param  Builder<InboundWebhook>  $query
+     * @param  int  $days  Number of days
      * @return Builder<InboundWebhook>
      */
     public function scopeOlderThan(Builder $query, int $days): Builder

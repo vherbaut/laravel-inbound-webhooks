@@ -18,7 +18,7 @@ beforeEach(function () {
 
 it('validates correct signature with prefix', function () {
     $payload = json_encode(['event' => 'test', 'id' => '123']);
-    $signature = 'sha256=' . hash_hmac('sha256', $payload, $this->secret);
+    $signature = 'sha256='.hash_hmac('sha256', $payload, $this->secret);
 
     $request = Request::create('/webhooks/custom', 'POST', [], [], [], [
         'HTTP_X_CUSTOM_SIGNATURE' => $signature,

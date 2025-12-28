@@ -63,13 +63,31 @@ it('registers custom driver', function () {
     ]]);
 
     $this->manager->extend('my_custom', function ($config) {
-        return new class($config) implements DriverInterface {
+        return new class($config) implements DriverInterface
+        {
             public function __construct(public array $config) {}
+
             public function validateSignature(\Illuminate\Http\Request $request): void {}
-            public function getEventType(\Illuminate\Http\Request $request): ?string { return 'custom'; }
-            public function getExternalId(\Illuminate\Http\Request $request): ?string { return null; }
-            public function getPayload(\Illuminate\Http\Request $request): array { return []; }
-            public function getStorableHeaders(\Illuminate\Http\Request $request): array { return []; }
+
+            public function getEventType(\Illuminate\Http\Request $request): ?string
+            {
+                return 'custom';
+            }
+
+            public function getExternalId(\Illuminate\Http\Request $request): ?string
+            {
+                return null;
+            }
+
+            public function getPayload(\Illuminate\Http\Request $request): array
+            {
+                return [];
+            }
+
+            public function getStorableHeaders(\Illuminate\Http\Request $request): array
+            {
+                return [];
+            }
         };
     });
 

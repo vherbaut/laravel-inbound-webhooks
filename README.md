@@ -15,7 +15,7 @@ A Laravel package to handle inbound webhooks from any provider with signature va
 ## Installation
 
 ```bash
-composer require your-vendor/laravel-inbound-webhooks
+composer require vherbaut/laravel-inbound-webhooks
 ```
 
 Publish the config and migrations:

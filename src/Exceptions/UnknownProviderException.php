@@ -14,6 +14,4 @@ use Exception;
  *
  * @see \Vherbaut\InboundWebhooks\Drivers\DriverManager::driver()
  */
-class UnknownProviderException extends Exception
-{
-}
+class UnknownProviderException extends Exception {}

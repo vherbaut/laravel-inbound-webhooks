@@ -36,7 +36,7 @@ class StripeDriver extends AbstractDriver
      * The signature is validated by recomputing the HMAC and comparing
      * with a timing-safe function to prevent timing attacks.
      *
-     * @param Request $request The incoming webhook request
+     * @param  Request  $request  The incoming webhook request
      *
      * @throws InvalidSignatureException If the header is missing, secret is not configured,
      *                                   format is invalid, timestamp is outside tolerance,
@@ -91,7 +91,7 @@ class StripeDriver extends AbstractDriver
      * Stripe event types follow the format "resource.action" (e.g.,
      * "payment_intent.succeeded", "customer.subscription.deleted").
      *
-     * @param Request $request The incoming webhook request
+     * @param  Request  $request  The incoming webhook request
      *
      * @return string|null The Stripe event type
      */
@@ -105,7 +105,7 @@ class StripeDriver extends AbstractDriver
      *
      * Returns the Stripe event ID (e.g., "evt_1234567890").
      *
-     * @param Request $request The incoming webhook request
+     * @param  Request  $request  The incoming webhook request
      *
      * @return string|null The Stripe event ID
      */
@@ -132,7 +132,7 @@ class StripeDriver extends AbstractDriver
      * The header format is: "t=timestamp,v1=signature,v0=legacy_signature"
      * Each component is a key=value pair separated by commas.
      *
-     * @param string $signature The raw Stripe-Signature header value
+     * @param  string  $signature  The raw Stripe-Signature header value
      *
      * @return array<string, string> Parsed signature components indexed by key
      */

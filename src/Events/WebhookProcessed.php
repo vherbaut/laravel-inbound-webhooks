@@ -38,7 +38,7 @@ class WebhookProcessed
     /**
      * Create a new event instance.
      *
-     * @param InboundWebhook $webhook The webhook that was successfully processed
+     * @param  InboundWebhook  $webhook  The webhook that was successfully processed
      */
     public function __construct(
         public InboundWebhook $webhook

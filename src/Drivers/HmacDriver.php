@@ -31,7 +31,7 @@ class HmacDriver extends AbstractDriver
      * Computes an HMAC signature of the raw request body using the configured
      * secret and algorithm, then compares it with the signature from the request header.
      *
-     * @param Request $request The incoming webhook request
+     * @param  Request  $request  The incoming webhook request
      *
      * @throws InvalidSignatureException If the signature header is missing, secret is not configured, or signature is invalid
      */
@@ -77,7 +77,7 @@ class HmacDriver extends AbstractDriver
      * 1. Header specified by `event_header` config
      * 2. Payload key specified by `event_key` config (default: 'event')
      *
-     * @param Request $request The incoming webhook request
+     * @param  Request  $request  The incoming webhook request
      *
      * @return string|null The event type, or null if not found
      */
@@ -105,7 +105,7 @@ class HmacDriver extends AbstractDriver
      * 1. Header specified by `id_header` config
      * 2. Payload key specified by `id_key` config (default: 'id')
      *
-     * @param Request $request The incoming webhook request
+     * @param  Request  $request  The incoming webhook request
      *
      * @return string|null The external ID, or null if not found
      */

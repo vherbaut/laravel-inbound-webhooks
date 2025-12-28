@@ -33,7 +33,7 @@ class TwilioDriver extends AbstractDriver
      * 2. All POST parameters sorted alphabetically and concatenated (key + value)
      * 3. HMAC-SHA1 of the above, base64 encoded
      *
-     * @param Request $request The incoming webhook request
+     * @param  Request  $request  The incoming webhook request
      *
      * @throws InvalidSignatureException If the header is missing, auth token is not configured,
      *                                   or signature does not match
@@ -63,7 +63,7 @@ class TwilioDriver extends AbstractDriver
         $dataString = $url;
 
         foreach ($params as $key => $value) {
-            $dataString .= $key . $value;
+            $dataString .= $key.$value;
         }
 
         $computedSignature = base64_encode(hash_hmac('sha1', $dataString, $authToken, true));
@@ -81,7 +81,7 @@ class TwilioDriver extends AbstractDriver
      * - Voice webhooks: "call.{status}" or "call.incoming"
      * - Status callbacks: "status_callback"
      *
-     * @param Request $request The incoming webhook request
+     * @param  Request  $request  The incoming webhook request
      *
      * @return string|null The derived event type, or null if not determinable
      */
@@ -116,7 +116,7 @@ class TwilioDriver extends AbstractDriver
      * 2. CallSid (for Voice webhooks)
      * 3. SmsSid (legacy SMS webhook field)
      *
-     * @param Request $request The incoming webhook request
+     * @param  Request  $request  The incoming webhook request
      *
      * @return string|null The Twilio SID, or null if not found
      */

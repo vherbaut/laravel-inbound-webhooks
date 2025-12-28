@@ -48,7 +48,7 @@ class WebhookReceived
     /**
      * Create a new event instance.
      *
-     * @param InboundWebhook $webhook The received webhook model
+     * @param  InboundWebhook  $webhook  The received webhook model
      */
     public function __construct(
         public InboundWebhook $webhook
@@ -95,8 +95,8 @@ class WebhookReceived
      * Provides convenient access to nested payload data without
      * manual array traversal.
      *
-     * @param string $key     The dot-notation key (e.g., "data.object.id")
-     * @param mixed  $default Default value if key doesn't exist
+     * @param  string  $key  The dot-notation key (e.g., "data.object.id")
+     * @param  mixed  $default  Default value if key doesn't exist
      *
      * @return mixed The value at the specified key, or the default
      *

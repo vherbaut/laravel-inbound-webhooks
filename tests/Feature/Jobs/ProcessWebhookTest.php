@@ -65,7 +65,8 @@ it('dispatches WebhookProcessed event on success', function () {
 });
 
 it('dispatches mapped event when configured', function () {
-    $customEventClass = new class() {
+    $customEventClass = new class
+    {
         public InboundWebhook $webhook;
 
         public function __construct(?InboundWebhook $webhook = null)

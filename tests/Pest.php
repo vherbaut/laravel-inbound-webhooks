@@ -43,7 +43,7 @@ function createStripeSignature(string $payload, string $secret, ?int $timestamp 
  */
 function createGitHubSignature(string $payload, string $secret): string
 {
-    return 'sha256=' . hash_hmac('sha256', $payload, $secret);
+    return 'sha256='.hash_hmac('sha256', $payload, $secret);
 }
 
 /**
@@ -67,7 +67,7 @@ function createTwilioSignature(string $url, array $params, string $authToken): s
     $dataString = $url;
 
     foreach ($params as $key => $value) {
-        $dataString .= $key . $value;
+        $dataString .= $key.$value;
     }
 
     return base64_encode(hash_hmac('sha1', $dataString, $authToken, true));

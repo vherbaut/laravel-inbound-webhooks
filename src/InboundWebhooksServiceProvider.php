@@ -25,7 +25,7 @@ class InboundWebhooksServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/inbound-webhooks.php', 'inbound-webhooks');
+        $this->mergeConfigFrom(__DIR__.'/../config/inbound-webhooks.php', 'inbound-webhooks');
 
         $this->app->singleton(DriverManager::class, function (Application $app) {
             return new DriverManager($app);
@@ -58,11 +58,11 @@ class InboundWebhooksServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/inbound-webhooks.php' => config_path('inbound-webhooks.php'),
+                __DIR__.'/../config/inbound-webhooks.php' => config_path('inbound-webhooks.php'),
             ], 'inbound-webhooks-config');
 
             $this->publishes([
-                __DIR__ . '/../database/migrations/' => database_path('migrations'),
+                __DIR__.'/../database/migrations/' => database_path('migrations'),
             ], 'inbound-webhooks-migrations');
         }
     }
@@ -72,7 +72,7 @@ class InboundWebhooksServiceProvider extends ServiceProvider
      */
     protected function registerRoutes(): void
     {
-        $this->loadRoutesFrom(__DIR__ . '/../routes/webhooks.php');
+        $this->loadRoutesFrom(__DIR__.'/../routes/webhooks.php');
     }
 
     /**
@@ -99,6 +99,6 @@ class InboundWebhooksServiceProvider extends ServiceProvider
      */
     protected function registerMigrations(): void
     {
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
 }

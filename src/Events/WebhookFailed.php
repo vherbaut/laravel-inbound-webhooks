@@ -43,8 +43,8 @@ class WebhookFailed
     /**
      * Create a new event instance.
      *
-     * @param InboundWebhook $webhook   The webhook that failed to process
-     * @param Throwable      $exception The exception that caused the failure
+     * @param  InboundWebhook  $webhook  The webhook that failed to process
+     * @param  Throwable  $exception  The exception that caused the failure
      */
     public function __construct(
         public InboundWebhook $webhook,

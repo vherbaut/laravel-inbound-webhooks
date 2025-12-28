@@ -268,7 +268,7 @@ it('chains multiple scopes', function () {
 });
 
 it('uses uuid as route key', function () {
-    $webhook = new InboundWebhook();
+    $webhook = new InboundWebhook;
 
     expect($webhook->getRouteKeyName())->toBe('uuid');
 });
@@ -300,7 +300,7 @@ it('returns query for prunable records based on config', function () {
     $recent->created_at = now()->subDays(10);
     $recent->save();
 
-    $prunable = (new InboundWebhook())->prunable()->get();
+    $prunable = (new InboundWebhook)->prunable()->get();
 
     expect($prunable)->toHaveCount(1);
 });
@@ -314,7 +314,7 @@ it('returns empty query when retention is null', function () {
         'created_at' => now()->subDays(100),
     ]);
 
-    $prunable = (new InboundWebhook())->prunable()->get();
+    $prunable = (new InboundWebhook)->prunable()->get();
 
     expect($prunable)->toHaveCount(0);
 });

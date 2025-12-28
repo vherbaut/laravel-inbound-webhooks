@@ -7,12 +7,11 @@ beforeEach(function () {
     config(['inbound-webhooks.storage.retention_days' => 30]);
 });
 
-
 /**
  * Helper function to create an old webhook.
  *
- * @param array $attributes
- * @param int $daysOld
+ * @param  array  $attributes
+ * @param  int  $daysOld
  * @return InboundWebhook
  */
 function createOldWebhook(array $attributes, int $daysOld): InboundWebhook

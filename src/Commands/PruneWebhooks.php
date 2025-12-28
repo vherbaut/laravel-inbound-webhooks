@@ -85,7 +85,7 @@ class PruneWebhooks extends Command
             return self::SUCCESS;
         }
 
-        if (!$this->confirm("Do you want to delete {$count} webhook records?")) {
+        if (! $this->confirm("Do you want to delete {$count} webhook records?")) {
             $this->info('Aborted.');
 
             return self::SUCCESS;
@@ -101,7 +101,7 @@ class PruneWebhooks extends Command
     /**
      * Display a summary table of webhooks that would be pruned.
      *
-     * @param Builder<InboundWebhook> $query
+     * @param  Builder<InboundWebhook>  $query
      */
     protected function displayPruneSummary(Builder $query): void
     {

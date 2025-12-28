@@ -54,7 +54,7 @@ class ProcessWebhook implements ShouldQueue
      *
      * Configures the queue connection and queue name from the package config.
      *
-     * @param InboundWebhook $webhook The webhook to process
+     * @param  InboundWebhook  $webhook  The webhook to process
      */
     public function __construct(
         public InboundWebhook $webhook
@@ -105,7 +105,7 @@ class ProcessWebhook implements ShouldQueue
      *
      * Called by Laravel's queue system when the job ultimately fails.
      *
-     * @param Throwable|null $exception The exception that caused the failure
+     * @param  Throwable|null  $exception  The exception that caused the failure
      */
     public function failed(?Throwable $exception): void
     {
@@ -138,7 +138,7 @@ class ProcessWebhook implements ShouldQueue
      * Updates the webhook status to failed with the error message
      * and dispatches the WebhookFailed event for error handling.
      *
-     * @param Throwable $e The exception that caused the failure
+     * @param  Throwable  $e  The exception that caused the failure
      */
     protected function handleFailure(Throwable $e): void
     {

@@ -4,7 +4,6 @@ namespace Vherbaut\InboundWebhooks\Commands;
 
 use Illuminate\Console\Command;
 use Throwable;
-use Vherbaut\InboundWebhooks\Enums\WebhookStatus;
 use Vherbaut\InboundWebhooks\Jobs\ProcessWebhook;
 use Vherbaut\InboundWebhooks\Models\InboundWebhook;
 
@@ -47,7 +46,7 @@ class ReplayWebhook extends Command
             ->orWhere('id', $id)
             ->first();
 
-        if (!$webhook) {
+        if (! $webhook) {
             $this->error("Webhook [{$id}] not found.");
 
             return self::FAILURE;
@@ -55,10 +54,10 @@ class ReplayWebhook extends Command
 
         $this->displayWebhookInfo($webhook);
 
-        if ($webhook->isProcessed() && !$this->option('force')) {
+        if ($webhook->isProcessed() && ! $this->option('force')) {
             $this->warn('This webhook has already been processed.');
 
-            if (!$this->confirm('Do you want to replay it anyway?')) {
+            if (! $this->confirm('Do you want to replay it anyway?')) {
                 return self::SUCCESS;
             }
         }
@@ -78,7 +77,7 @@ class ReplayWebhook extends Command
     /**
      * Process the webhook synchronously.
      *
-     * @param InboundWebhook $webhook
+     * @param  InboundWebhook  $webhook
      * @return int
      */
     protected function processSync(InboundWebhook $webhook): int

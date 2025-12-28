@@ -22,7 +22,7 @@ abstract class AbstractDriver implements DriverInterface
     protected array $config;
 
     /**
-     * @param array<string, mixed> $config Driver-specific configuration
+     * @param  array<string, mixed>  $config  Driver-specific configuration
      */
     public function __construct(array $config)
     {
@@ -32,7 +32,7 @@ abstract class AbstractDriver implements DriverInterface
     /**
      * Extract the parsed payload from the webhook request.
      *
-     * @param Request $request The incoming webhook request
+     * @param  Request  $request  The incoming webhook request
      *
      * @return array<string, mixed> The parsed payload data
      */
@@ -47,7 +47,7 @@ abstract class AbstractDriver implements DriverInterface
      * Filters the request headers to only include those defined as relevant
      * for this provider, avoiding storage of unnecessary or sensitive headers.
      *
-     * @param Request $request The incoming webhook request
+     * @param  Request  $request  The incoming webhook request
      *
      * @return array<string, string> Associative array of header names to values
      */
@@ -88,9 +88,9 @@ abstract class AbstractDriver implements DriverInterface
     /**
      * Compute an HMAC signature for payload verification.
      *
-     * @param string $payload   The raw payload content to sign
-     * @param string $secret    The shared secret key
-     * @param string $algorithm The hashing algorithm (default: sha256)
+     * @param  string  $payload  The raw payload content to sign
+     * @param  string  $secret  The shared secret key
+     * @param  string  $algorithm  The hashing algorithm (default: sha256)
      *
      * @return string The computed HMAC signature in hexadecimal format
      */
@@ -105,8 +105,8 @@ abstract class AbstractDriver implements DriverInterface
      * This method prevents timing attacks by ensuring the comparison
      * takes constant time regardless of where the strings differ.
      *
-     * @param string $expected The expected signature value
-     * @param string $actual   The actual signature from the request
+     * @param  string  $expected  The expected signature value
+     * @param  string  $actual  The actual signature from the request
      *
      * @return bool True if signatures match, false otherwise
      */

@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Queue;
 use Vherbaut\InboundWebhooks\Enums\WebhookStatus;
 use Vherbaut\InboundWebhooks\Jobs\ProcessWebhook;
